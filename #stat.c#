@@ -1,10 +1,9 @@
-#include <time.h>
-#include <fcntl.h>
+/#include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/stat.h>
 #include <string.h>
-#include <sys/types.h>
+//#include <sys/type.h>
 
 int main()
 {
@@ -15,13 +14,16 @@ int main()
   //printf("%s\n",strcat(cwd,"/file"));
   if(stat("file",&lol)==0)
     {
+      char date[10];
       printf("Printing file information\n");
-      printf("file size: %d GB\n",lol.st_size/(1024*1024*1024));
-      printf("file size: %d MB\n",lol.st_size/(1024*1024));
-      printf("file size: %d KB\n",lol.st_size/1024);
-      printf("file size: %d bytes\n",lol.st_size%1024);
-      printf("last time of access: %s\n",ctime(&lol.st_atime) );
+      
+      printf("file size: %d bytes\n",lol.st_size);
+      
+      strtime(data,git p
+	      "%d-%m-%y",localtime((lol.st_atime)));
+      
       printf("File Permissions:   ");
+      
       printf( (S_ISDIR(lol.st_mode)) ? "d" : "-");
       printf( (lol.st_mode & S_IRUSR) ? "r" : "-");
       printf( (lol.st_mode & S_IWUSR) ? "w" : "-");
