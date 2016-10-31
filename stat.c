@@ -16,10 +16,10 @@ int main()
   if(stat("file",&lol)==0)
     {
       printf("Printing file information\n");
-      printf("file size: %d GB\n",lol.st_size/(1024*1024*1024));
-      printf("file size: %d MB\n",lol.st_size/(1024*1024));
-      printf("file size: %d KB\n",lol.st_size/1024);
-      printf("file size: %d bytes\n",lol.st_size%1024);
+      printf("file size: %d GB ",lol.st_size/(1024*1024*1024));
+      printf("%d MB ",lol.st_size/(1024*1024));
+      printf("%d KB ",lol.st_size/1024);
+      printf("%d bytes\n",lol.st_size%1024);
       printf("last time of access: %s\n",ctime(&lol.st_atime) );
       printf("File Permissions:   ");
       printf( (S_ISDIR(lol.st_mode)) ? "d" : "-");
