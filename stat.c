@@ -20,7 +20,7 @@ int main()
       printf("%d MB ",lol.st_size/(1024*1024));
       printf("%d KB ",lol.st_size/1024);
       printf("%d bytes\n",lol.st_size%1024);
-      printf("last time of access: %s\n",ctime(&lol.st_atime) );
+      printf("last time of access: %s",ctime(&lol.st_atime) );
       printf("File Permissions:   ");
       printf( (S_ISDIR(lol.st_mode)) ? "d" : "-");
       printf( (lol.st_mode & S_IRUSR) ? "r" : "-");
